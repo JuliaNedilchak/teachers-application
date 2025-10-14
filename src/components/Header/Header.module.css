@@ -1,0 +1,33 @@
+.header{
+    display: flex;
+align-items: center;
+justify-content: space-between;
+    margin: 20px 128px;
+   
+}
+.logo{
+    display: flex;
+    gap:8px;
+    align-items: center;
+}
+.navig{
+    display: flex;
+    gap:28px;
+    
+}
+.auth{
+    display: flex;
+}
+.auth img{
+    margin-right: 8px;;
+}
+.links{
+    display: flex;
+    gap: 16px;
+}
+.nav{
+    text-decoration: none;
+}
+.authorize{
+    text-decoration: none;
+}
