@@ -10,6 +10,12 @@ justify-content: space-between;
     gap:8px;
     align-items: center;
 }
+.logoText{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+      letter-spacing: -2%;
+}
 .navig{
     display: flex;
     gap:28px;
@@ -17,17 +23,38 @@ justify-content: space-between;
 }
 .auth{
     display: flex;
+    align-items: center;
 }
 .auth img{
     margin-right: 8px;;
 }
 .links{
     display: flex;
+    align-items: center;
     gap: 16px;
 }
 .nav{
     text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
 }
 .authorize{
     text-decoration: none;
+   color: #121417;
+   font-weight: 700;
+   font-size: 16px;
+   line-height: 20px;
+}
+.registration{
+    display: flex;
+    padding: 14px 39px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #121417;
+    border-radius: 12px;
+    text-decoration: none;
+
 }

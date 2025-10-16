@@ -9,7 +9,7 @@ const Header = () => {
     <header className={css.header} >
     <div className={css.logo}>
         <img src={ukraine} alt="ukraine" width={28} height={28}/>
-        <p>LearnLingo</p>
+        <p className={css.logoText}>LearnLingo</p>
         </div>
         <nav className={css.navig}>
             <NavLink className={css.nav} to="/" end >Home</NavLink> 
@@ -19,7 +19,7 @@ const Header = () => {
             <img src={login} alt="login sign"/>
             <div className={css.links}>
             <Link className={css.authorize} to="/login">Log in</Link>
-            <Link  className={css.authorize}  to="/registration">Registration</Link>
+            <Link  className={css.registration}  to="/registration">Registration</Link>
             </div>
         </div>
     </header>
