@@ -1,28 +1,13 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchTeachers } from '../../redux/features/teachers/teachersSlice';
+import React from 'react'
+import TeachersList from '../../components/Teachers/TeacherList/TeachersList'
+import Filters from '../../components/Filters/Filters'
 
 const Teachers = () => {
-  const dispatch = useDispatch();
-  const {items, status, error}=useSelector((state)=>state.teachers);
-  useEffect(()=>{
-    if(status==='idle'){
-      dispatch(fetchTeachers());
-    }
-    
-  }, [status,dispatch]);
-
-  if (status==='loading') return <p>loading</p>;
-  if (status==='failed') return <p>Error:{error}</p>;
   return (
-    <ul>
-      {items.map((t,index)=>(
-        <li key={index}>
-          {t.name} {t.surname}
-        </li>
-      )
-      )}
-    </ul>
+    <div>
+    <Filters/>
+      <TeachersList/>
+    </div>
   )
 }
 
