@@ -26,3 +26,21 @@
     align-items: center;
     justify-content: center;
 }
+
+.info{
+display: flex;
+}
+.justPhoto{
+    display: flex;
+}
+.infoPart{
+    display: flex;
+flex-direction: row;
+gap: 48px;
+}
+.button{
+    display: flex;
+}
+.levels{
+    display: flex;
+}
