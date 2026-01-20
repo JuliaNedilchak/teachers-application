@@ -24,7 +24,7 @@ const TeacherCard = ({teacher}) => {
         <p>lessons info:{lesson_info} </p>
         <p>conditions: {conditions}</p>
       </div>
-      <button className={css.button} type='button'>load more</button>
+      <button className={css.button} type='button'>read more</button>
       <div className={css.levelSection}>
         <p className={css.levels}>{levels}</p>
       </div>

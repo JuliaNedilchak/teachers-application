@@ -16,11 +16,11 @@ export const fetchTeachers= createAsyncThunk( 'teachers/fetchAll',
             const data = snapshot.val();
 
             if (!data) return [];
-            if (Array.isArray(data)) {
-return data.filter(Boolean);
-            }
+           
 
-            return  Object.values(data).filter(Boolean);
+            return  Object.entries(data).map(([id,teacher])=>
+            ({id, 
+                ...teacher}));
         }
         catch(error){
             return thunkAPI.rejectWithValue(error.message)
