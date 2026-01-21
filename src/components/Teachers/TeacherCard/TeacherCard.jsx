@@ -1,5 +1,6 @@
 import React from 'react'
 import css from "./TeacherCard.module.css";
+import { Link } from 'react-router-dom';
 const TeacherCard = ({teacher}) => {
   const {avatar_url,name,surname,languages,lesson_info,conditions, levels,rating, price_per_hour,lessons_done}=teacher;
   return (
@@ -24,7 +25,7 @@ const TeacherCard = ({teacher}) => {
         <p>lessons info:{lesson_info} </p>
         <p>conditions: {conditions}</p>
       </div>
-      <button className={css.button} type='button'>read more</button>
+      <Link to={`/teachers/${teacher.id}`}>Read more</Link>
       <div className={css.levelSection}>
         <p className={css.levels}>{levels}</p>
       </div>

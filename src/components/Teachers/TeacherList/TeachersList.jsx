@@ -8,6 +8,7 @@ const TeachersList = () => {
     const teachers= useSelector(state=>
         state.teachers.items);
         console.log('techers from store:', teachers )
+        console.log(teachers[2]?.id )
     const status = useSelector(state=>state.teachers.status);
     const error = useSelector(state=> state.teachers.error);
     const STEP=3;
@@ -29,8 +30,8 @@ const visibleTeachers=teachers.slice(0,visibleCount);
 const canLoadMore=visibleCount<teachers.length;
   return (
     <div>
-     {visibleTeachers.map((teacher,index)=>(
-        <TeacherCard key={index} teacher={teacher}/>
+     {visibleTeachers.map((teacher)=>(
+        <TeacherCard key={teacher.id} teacher={teacher}/>
      )
      )}
     {canLoadMore &&(
