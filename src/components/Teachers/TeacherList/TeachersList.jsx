@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchTeachers } from '../../../redux/features/teachers/teachersSlice';
 import TeacherCard from '../TeacherCard/TeacherCard';
 
-const TeachersList = () => {
+const TeachersList = ({filters}) => {
     const dispatch=useDispatch();
     const teachers= useSelector(state=>
         state.teachers.items);
