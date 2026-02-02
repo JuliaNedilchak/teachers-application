@@ -6,8 +6,21 @@
     margin-left: 128px;
     margin-right: 128px;
     margin-bottom: 32px;
-    border: 1px solid blue;
+    border: 1px solid lightgray;
+    border-radius: 24px;
    
+}
+
+.lang{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+color:#8A8A89;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+
 }
 
 .photo{
@@ -29,6 +42,89 @@
 
 .info{
 display: flex;
+gap: 147px;
+}
+
+.done_container{
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+  
+   
+}
+
+.lessons_online{
+display: flex;
+align-items:center;
+
+gap: 4px;
+
+}
+
+.lessons_done{
+    margin-right: 16px;
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+}
+.rating{
+    display: flex;
+align-items:center;
+gap: 8px;
+margin-left: 16px;
+margin-right: 16px;
+}
+.priceText{
+    display: flex;
+    align-items: center;
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+margin-right: 64px;
+}
+
+.heartFrame{
+    display: flex;
+    align-items: center;
+}
+.ratingText{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+margin-right: 8px;
+}
+.online{
+    margin-right: 16px;
+
+font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+}
+.stats{
+    display: flex;
+
 }
 .justPhoto{
     display: flex;
