@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchTeachers } from '../../../redux/features/teachers/teachersSlice';
 import TeacherCard from '../TeacherCard/TeacherCard';
 
-const TeachersList = ({filters}) => {
+const TeachersList = () => {
     const dispatch=useDispatch();
     const teachers= useSelector(state=>
         state.teachers.items);
+        const filters= useSelector(state=>state.filters);
         console.log('techers from store:', teachers )
         console.log(teachers[2]?.id )
         console.log(teachers[3]?.price_per_hour, typeof teachers[3]?.price_per_hour)
@@ -46,12 +47,14 @@ useEffect(()=>{
 if(status==='failed'){
     return <p>Error: {error}</p>
 }
-
+if(filteredTeachers.length===0)
+    return <p>No teachers found for these filters</p>
 
 const visibleTeachers=filteredTeachers.slice(0,visibleCount);
 const canLoadMore=visibleCount<filteredTeachers.length;
   return (
     <div>
+   
      {visibleTeachers.map((teacher)=>(
         <TeacherCard key={teacher.id} teacher={teacher}/>
      )

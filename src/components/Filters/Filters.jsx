@@ -1,25 +1,43 @@
-import React from 'react'
+import React, { useMemo } from 'react'
+import { useDispatch,useSelector } from 'react-redux';
+import {setFilter,resetFilters} from '../../redux/features/filters/filtersSlice'
 
-const Filters = ({filters, onChange}) => {
+const Filters = () => {
 
+  const dispatch=useDispatch();
+  const filters=useSelector((state)=> state.filters);
+  const teachers=useSelector((state)=> state.teachers.items)
+const levelsOpt = useMemo(()=>{
+  const all= teachers.flatMap((t)=>
+    t.levels||[]
+  );
+  return ['all', ...Array.from(new Set(all))]
+},[teachers])
+
+const languageOpt=useMemo(()=>{
+  const allLang=teachers.flatMap((t)=>
+  t.languages|| []);
+  return ['all', ...Array.from(new Set(allLang))]
+},[teachers])
   const handleChange=(e)=>{
     const{name, value}=e.target;
-    onChange({...filters,[name]:value});
+    dispatch(setFilter({name,value}))
+  }
+  const handleReset=()=>{
+    dispatch(resetFilters());
   }
   return (
     <div> <label htmlFor="languages"> languages</label>
       <select name='languages' value={filters.languages} id='languages' onChange={handleChange}>
-     <option value="all">all</option>
-      <option value="French">French</option>
-       <option value="English">English</option>
-        <option value="German">German</option>
+     {languageOpt.map((lang)=>{
+      return (<option key={lang} value={lang}>{lang==='all'? 'all':lang}</option>)
+     })}
 </select>
  <label htmlFor="levels"> levels of knowledge</label>
       <select name='levels' value={filters.levels} id='levels'  onChange={handleChange}>
-     <option value="all">all</option>
-      <option value="A1 Beginner">A1 Beginner</option>
-       <option value="A2 Elementary">A2 Elementary</option>
-        <option value="B1 Intermediate">B1 Intermediate</option>
+     {levelsOpt.map((lvl)=>{
+      return (<option key={lvl} value={lvl}>{lvl==='all'? 'all':lvl}</option>)
+     })}
 </select>
  <label htmlFor="price"> Price</label>
       <select name='price'  value={filters.price} id='price'  onChange={handleChange}>
@@ -28,6 +46,7 @@ const Filters = ({filters, onChange}) => {
        <option value="30">30 $</option>
         <option value="40">40 $</option>
 </select>
+<button type='button' onClick={handleReset}>Reset</button>
     </div>
   )
 }
