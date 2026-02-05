@@ -22,7 +22,22 @@ letter-spacing: 0%;
 vertical-align: middle;
 
 }
+.nameTeacher{
 
+
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 24px;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+}
+
+.nameCont{
+    display: flex;
+}
 .photo{
     width: 100%;
     height: 100%;
@@ -39,14 +54,76 @@ vertical-align: middle;
     align-items: center;
     justify-content: center;
 }
+.start{
+   display: flex;
+   align-items: center;
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+color:#8A8A89;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
 
+}
+.startText{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #121417;
+
+}
 .info{
 display: flex;
-gap: 147px;
+flex-direction: column;
+margin-bottom: 8px;
+
 }
 
-.done_container{
+.button{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+text-decoration: underline;
+text-decoration-style: solid;
+text-decoration-thickness: 0%;
+margin-bottom: 32px;
+
+}
+.experience{
+    font-family: Roboto;
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #121417;
+margin-bottom: 32px;
+
+}
+.levelSection{
     display: flex;
+    gap: 4px;
+}
+
+.levelItem{
+    padding: 8px 12px;
+    border-radius: 34px;
+    border: 1px solid;
+}
+.done_container{
+        display: flex;
     align-items: center;
     margin-left: 16px;
   
@@ -61,6 +138,9 @@ gap: 4px;
 
 }
 
+.names{
+    margin-right: 112px;
+}
 .lessons_done{
     margin-right: 16px;
     font-family: Roboto;
@@ -135,8 +215,5 @@ flex-direction: row;
 gap: 48px;
 }
 .button{
-    display: flex;
-}
-.levels{
     display: flex;
 }
