@@ -9,6 +9,7 @@ import heart from '../../../images/heart.svg'
 const TeacherCard = ({teacher}) => {
   const {avatar_url,name,surname,languages,lesson_info,conditions, levels,rating, price_per_hour,lessons_done}=teacher;
   const [isOpen, setIsOpen]=useState(false);
+  const [isBookingOpen, setIsBookingOpen]=useState(false);
   return (
     <article className={css.cardContainer}>
     <div className={css.infoPart}>
@@ -43,24 +44,30 @@ const TeacherCard = ({teacher}) => {
        {isOpen && 
        (<div>
        <p className={css.experience}>{teacher.experience} </p>
-       <ul>
-       <li>
-        <div>
-          <p>{teacher.reviews.map(review=> (
-           <div><p>{review.reviewer_name}</p>
-           <div><img src={star} alt='star' width={16} height={16}/><p>{review.reviewer_rating}</p></div></div>
+       <ul className={css.list}>
+       {teacher.reviews.map(review=> (
+           <li className={css.reviewItem}  ><p className={css.revName}>{review.reviewer_name}</p>
+           <div className={css.reviewBlock}>
+           <img src={star} alt='star' width={16} height={16}/><p className={css.rate}>{review.reviewer_rating.toFixed(1)}</p></div>
+           <p className={css.comment}>{review.comment}</p></li>
           
-          ))}</p>
-        </div>
-       </li>
+          ))}
+        
+       
 </ul>
        </div>)}
-      <button type='button' onClick={()=> setIsOpen(prev=> !prev)}>{isOpen? 'Read less' : 'Read more'}</button>
+      {!isOpen && (
+        <button onClick={()=> setIsOpen(true)}>read more</button>
+      )}
      
         <div className={css.levelSection}>{levels.map(level=>(
           <span className={css.levelItem} key={level}>{level}</span>
         ))}</div>
-      
+      <button type='button' onClick={()=>setIsBookingOpen(true)}>book a trial session</button>
+      {isBookingOpen && (
+        <BookingModal teacher={teacher}
+        onClose={()=>setIsBookingOpen(false)}/>
+      )}
       </div>
       
       </div>
