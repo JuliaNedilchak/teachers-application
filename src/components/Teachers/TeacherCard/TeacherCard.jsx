@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import book from '../../../images/book.svg'
 import star from '../../../images/star.svg'
 import heart from '../../../images/heart.svg'
+import BookingModal from '../../Modals/BookingModal/BookingModal';
 
 
 const TeacherCard = ({teacher}) => {
@@ -63,16 +64,16 @@ const TeacherCard = ({teacher}) => {
         <div className={css.levelSection}>{levels.map(level=>(
           <span className={css.levelItem} key={level}>{level}</span>
         ))}</div>
-      <button type='button' onClick={()=>setIsBookingOpen(true)}>book a trial session</button>
-      {isBookingOpen && (
-        <BookingModal teacher={teacher}
-        onClose={()=>setIsBookingOpen(false)}/>
-      )}
+      <button type='button' onClick={()=> setIsBookingOpen(true)}>book a trial session</button>
+      
       </div>
       
       </div>
       
-      
+      <BookingModal isOpen={isBookingOpen}
+      onClose={()=>setIsBookingOpen(false)}>
+        <h2>Book trial Session</h2>
+      </BookingModal>
     </article>
    
   )
