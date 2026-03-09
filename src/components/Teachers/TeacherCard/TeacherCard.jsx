@@ -5,6 +5,7 @@ import book from '../../../images/book.svg'
 import star from '../../../images/star.svg'
 import heart from '../../../images/heart.svg'
 import BookingModal from '../../Modals/BookingModal/BookingModal';
+import BookingForm from '../../BookingForm/BookingForm';
 
 
 const TeacherCard = ({teacher}) => {
@@ -72,7 +73,7 @@ const TeacherCard = ({teacher}) => {
       
       <BookingModal isOpen={isBookingOpen}
       onClose={()=>setIsBookingOpen(false)}>
-        <h2>Book trial Session</h2>
+       <BookingForm teacherName={`${teacher.name} ${teacher.surname}`}></BookingForm>
       </BookingModal>
     </article>
    

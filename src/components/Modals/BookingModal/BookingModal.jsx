@@ -7,13 +7,18 @@ const modalRoot=document.getElementById('modal-root');
 
 const BookingModal = ({isOpen, onClose,children}) => {
     useEffect(()=>{
+      if(!open) return;
         const onKeyDown=(e)=>{
-            if(e.target==='Escape') onClose();
+            if(e.key==='Escape') onClose();
         }
         window.addEventListener('keydown',onKeyDown);
-        return()=>
+
+        const prevOverflow= document.body.style.overflow;
+        document.body.style.overflow='hidden';
+        return()=>{
             window.removeEventListener('keydown',onKeyDown);
-    },[onClose]);
+        document.body.style.overflow=prevOverflow;}
+    },[isOpen, onClose]);
     if(!isOpen) return null;
 
     const onBackdropClick=(e)=>{
