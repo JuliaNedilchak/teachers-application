@@ -7,7 +7,7 @@ const modalRoot=document.getElementById('modal-root');
 
 const BookingModal = ({isOpen, onClose,children}) => {
     useEffect(()=>{
-      if(!open) return;
+      if(!isOpen) return;
         const onKeyDown=(e)=>{
             if(e.key==='Escape') onClose();
         }
