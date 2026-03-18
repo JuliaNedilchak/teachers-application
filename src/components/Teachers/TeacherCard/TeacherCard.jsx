@@ -59,7 +59,7 @@ const TeacherCard = ({teacher}) => {
 </ul>
        </div>)}
       {!isOpen && (
-        <button onClick={()=> setIsOpen(true)}>read more</button>
+        <button className={css.buttonRead} onClick={()=> setIsOpen(true)}>read more</button>
       )}
      
         <div className={css.levelSection}>{levels.map(level=>(

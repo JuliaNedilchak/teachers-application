@@ -156,6 +156,20 @@ vertical-align: middle;
 .list{
     gap: 32px;
 }
+.buttonRead{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+text-decoration: underline;
+text-decoration-style: solid;
+text-decoration-thickness: 0%;
+border: none;
+    background-color: transparent;
+}
 
 .reviewBlock{
     display:flex ;

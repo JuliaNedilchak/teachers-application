@@ -1,0 +1,49 @@
+.filtersItem{
+    display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.selectOpt{
+   width: 220px;
+   padding: 14px;
+   border-radius: 14px;
+   border: 1px solid lightgrey;
+}
+.filter{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.selectOptTwo{
+    
+     width: 198px;
+   padding: 14px;
+   border-radius: 14px;
+   border: 1px solid lightgrey;
+
+}
+.selectOptThree{
+     width: 124px;
+   padding: 14px;
+   border-radius: 14px;
+   border: 1px solid lightgrey;
+
+}
+.label{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #8A8A89;
+}
+
+.filterButton{
+    padding: 0;
+    display: flex;
+    border: 1px solid lightgrey;
+    border-radius: 14px;
+}
