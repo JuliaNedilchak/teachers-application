@@ -73,7 +73,8 @@ const TeacherCard = ({teacher}) => {
       
       <BookingModal isOpen={isBookingOpen}
       onClose={()=>setIsBookingOpen(false)}>
-       <BookingForm teacherName={`${teacher.name} ${teacher.surname}`}></BookingForm>
+       <BookingForm teacherName={`${teacher.name} ${teacher.surname}`}
+       onClose={()=>setIsBookingOpen(false)}></BookingForm>
       </BookingModal>
     </article>
    

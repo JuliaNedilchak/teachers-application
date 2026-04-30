@@ -1,0 +1,62 @@
+.reasonsList {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bookLesson{
+font-family: Roboto;
+font-weight: 500;
+font-size: 40px;
+line-height: 48px;
+letter-spacing: -2%;
+
+}
+
+.blockTeacher{
+    margin-top: 20px;
+    gap: 4px;
+}
+
+.teacherName{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+line-height: 24px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+}
+
+.reason{
+font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 24px;
+line-height: 32px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+}
+
+.teacherText{
+    font-family: Roboto;
+font-weight: 500;
+font-style: Medium;
+font-size: 12px;
+color: #8A8A89;
+line-height: 16px;
+letter-spacing: 0%;
+vertical-align: middle;
+
+}
+
+.invText{
+    font-family: Roboto;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+letter-spacing: 0%;
+
+}
