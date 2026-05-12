@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ukraine from "../../images/ukraine.svg";
 import css from "./Header.module.css";
 import { Link, NavLink } from 'react-router-dom';
 import login from "../../images/login.svg"
+import BookingModal from '../Modals/BookingModal/BookingModal';
+import AuthForm from '../Modals/AuthForm/AuthForm';
+import RegisterForm from '../Modals/AuthForm/RegisterForm';
 
 const Header = () => {
+ // const [isAuthOpen, setIsAuthOpen]=useState(false);
+  const [authType, setAuthType]=useState(null);
   return (
     <header className={css.header} >
     <div className={css.logo}>
@@ -18,10 +23,15 @@ const Header = () => {
         <div className={css.auth}>
             <img src={login} alt="login sign"/>
             <div className={css.links}>
-            <Link className={css.authorize} to="/login">Log in</Link>
-            <Link  className={css.registration}  to="/registration">Registration</Link>
+            <button type='button' className={css.authorize} onClick={()=> setAuthType('login')}>Log in</button>
+            <button type='button' className={css.registration}  onClick={()=> setAuthType('register')}>Registration</button>
             </div>
         </div>
+        <BookingModal isOpen={Boolean(authType)}
+        onClose={()=>setAuthType(null)}>
+          {authType==='login' && (<AuthForm onClose={()=>setAuthType(null)}/>)}
+           {authType==='register' && (<RegisterForm onClose={()=>setAuthType(null)}/>)}
+        </BookingModal>
     </header>
   )
 }
