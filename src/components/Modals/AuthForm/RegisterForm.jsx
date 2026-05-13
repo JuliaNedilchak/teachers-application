@@ -4,6 +4,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import {auth} from '../../../firebase';
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../../redux/features/auth/authSlice';
 
 const schema=yup.object({
   name:
@@ -14,6 +16,8 @@ const schema=yup.object({
   yup.string().min(6, 'password must be at least 6 characters').required('password is required'),
 });
 const RegisterForm = ({onClose}) => {
+
+  const dispatch= useDispatch();
 
     const{
         register,
@@ -32,7 +36,12 @@ const RegisterForm = ({onClose}) => {
           data.email,
           data.password
         );
-        console.log(userCredential.user);
+       dispatch(
+        setUser({
+          email: userCredential.user.email,
+          uid: userCredential.user.uid,
+        })
+       )
         reset();
         onClose();
       }
