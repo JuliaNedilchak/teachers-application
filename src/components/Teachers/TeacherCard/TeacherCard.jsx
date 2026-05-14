@@ -6,12 +6,25 @@ import star from '../../../images/star.svg'
 import heart from '../../../images/heart.svg'
 import BookingModal from '../../Modals/BookingModal/BookingModal';
 import BookingForm from '../../BookingForm/BookingForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleFavorite } from '../../../redux/features/favorites/favoriteSlice';
 
 
 const TeacherCard = ({teacher}) => {
+  const dispatch=useDispatch();
+  const isLoggedIn=useSelector((state)=> state.auth.isLoggedIn);
+  const favorites=useSelector((state)=>state.favorites.favorites);
+  const isFavorite=favorites.some((item)=>item.id===teacher.id);
   const {avatar_url,name,surname,languages,lesson_info,conditions, levels,rating, price_per_hour,lessons_done}=teacher;
   const [isOpen, setIsOpen]=useState(false);
   const [isBookingOpen, setIsBookingOpen]=useState(false);
+  const handleFavoriteClick=()=> {
+    if(!isLoggedIn){
+      alert ('Pleade log in to add favorites');
+      return;
+    }
+    dispatch(toggleFavorite(teacher));
+    }
   return (
     <article className={css.cardContainer}>
     <div className={css.infoPart}>
@@ -66,6 +79,7 @@ const TeacherCard = ({teacher}) => {
           <span className={css.levelItem} key={level}>{level}</span>
         ))}</div>
       <button type='button' onClick={()=> setIsBookingOpen(true)}>book a trial session</button>
+      <button type='button' onClick={handleFavoriteClick}>{isFavorite ? '❤️' : '🤍'}</button>
       
       </div>
       

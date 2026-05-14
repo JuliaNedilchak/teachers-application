@@ -31,6 +31,8 @@ const Header = () => {
         <nav className={css.navig}>
             <NavLink className={css.nav} to="/" end >Home</NavLink> 
             <NavLink  className={css.nav} to= '/teachers'>Teachers</NavLink>
+            {isLoggedIn &&( <NavLink className={css.nav} to='/favorites'>Favorites</NavLink>)}
+           
         </nav>
         <div className={css.auth}>
             <img src={login} alt="login sign"/>
