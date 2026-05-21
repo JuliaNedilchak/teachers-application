@@ -15,6 +15,7 @@ const TeacherCard = ({teacher}) => {
   const isLoggedIn=useSelector((state)=> state.auth.isLoggedIn);
   const favorites=useSelector((state)=>state.favorites.favorites);
   const isFavorite=favorites.some((item)=>item.id===teacher.id);
+  const user=useSelector((state)=> state.auth.user);
   const {avatar_url,name,surname,languages,lesson_info,conditions, levels,rating, price_per_hour,lessons_done}=teacher;
   const [isOpen, setIsOpen]=useState(false);
   const [isBookingOpen, setIsBookingOpen]=useState(false);
@@ -23,7 +24,7 @@ const TeacherCard = ({teacher}) => {
       alert ('Pleade log in to add favorites');
       return;
     }
-    dispatch(toggleFavorite(teacher));
+    dispatch(toggleFavorite({teacher, uid: user.uid}));
     }
   return (
     <article className={css.cardContainer}>

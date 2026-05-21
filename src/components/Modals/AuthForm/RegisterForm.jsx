@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/features/auth/authSlice';
+import { setFavorites } from '../../../redux/features/favorites/favoriteSlice';
 
 const schema=yup.object({
   name:
@@ -41,7 +42,10 @@ const RegisterForm = ({onClose}) => {
           email: userCredential.user.email,
           uid: userCredential.user.uid,
         })
-       )
+       );
+       const uid=userCredential.user.uid;
+       const savedFavorites=JSON.parse(localStorage.getItem(`favorites_${uid}`)) || [];
+       dispatch(setFavorites(savedFavorites));
         reset();
         onClose();
       }

@@ -10,6 +10,7 @@ import {signOut} from 'firebase/auth';
 import {auth} from '../../firebase';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearUser } from '../../redux/features/auth/authSlice';
+import { clearFavorites } from '../../redux/features/favorites/favoriteSlice';
 
 const Header = () => {
  // const [isAuthOpen, setIsAuthOpen]=useState(false);
@@ -21,6 +22,7 @@ const Header = () => {
   const handleLogout=async()=>{
     await signOut(auth);
     dispatch(clearUser());
+    dispatch(clearFavorites());
   }
   return (
     <header className={css.header} >
