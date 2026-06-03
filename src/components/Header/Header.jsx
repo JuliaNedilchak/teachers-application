@@ -44,9 +44,9 @@ const Header = () => {
             <button type='button' onClick={handleLogout}>Log out</button>
             </div>
            ) : (
-            <div>
-            <button type='button' onClick={()=>setAuthType('login')}>Log in</button>
-            <button type='button' onClick={()=>setAuthType('register')}>Registration</button>
+            <div className={css.list}>
+            <button className={css.authButton} type='button' onClick={()=>setAuthType('login')}>Log in</button>
+            <button className={css.authButton} type='button' onClick={()=>setAuthType('register')}>Registration</button>
             </div>
            )}
             </div>

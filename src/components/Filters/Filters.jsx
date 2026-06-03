@@ -27,7 +27,7 @@ const languageOpt=useMemo(()=>{
     dispatch(resetFilters());
   }
   return (
-    <div>
+    <div className={css.allList}>
     <div className={css.filter}><div className={css.filtersItem}> <label className={css.label}  htmlFor="languages"> languages</label>
       <select className={css.selectOpt} name='languages' value={filters.languages} id='languages' onChange={handleChange}>
      {languageOpt.map((lang)=>{

@@ -1,0 +1,20 @@
+.credList{
+     display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.label{
+     width: 220px;
+   padding: 14px;
+   border-radius: 14px;
+   border: 1px solid lightgrey;
+}
+
+.button{
+    margin-top: 14px;
+    padding: 14px;
+    display: flex;
+    border: 1px solid lightgrey;
+    border-radius: 14px;
+}

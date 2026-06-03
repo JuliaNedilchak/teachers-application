@@ -11,6 +11,7 @@
    border: 1px solid lightgrey;
 }
 .filter{
+    margin-left: 128px;
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -42,8 +43,20 @@ color: #8A8A89;
 }
 
 .filterButton{
-    padding: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0 16px;
+  
+height: 48px;
     border: 1px solid lightgrey;
     border-radius: 14px;
+
+}
+.allList{
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 12px;
+
 }

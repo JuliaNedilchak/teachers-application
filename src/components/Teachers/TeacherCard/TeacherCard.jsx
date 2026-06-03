@@ -68,6 +68,9 @@ const TeacherCard = ({teacher}) => {
            <p className={css.comment}>{review.comment}</p></li>
           
           ))}
+          {isOpen && (
+            <button className={css.buttonRead} onClick={()=> setIsOpen(false)} type='button'>Read less</button>
+          )}
         
        
 </ul>
@@ -79,8 +82,9 @@ const TeacherCard = ({teacher}) => {
         <div className={css.levelSection}>{levels.map(level=>(
           <span className={css.levelItem} key={level}>{level}</span>
         ))}</div>
-      <button type='button' onClick={()=> setIsBookingOpen(true)}>book a trial session</button>
-      <button type='button' onClick={handleFavoriteClick}>{isFavorite ? '❤️' : '🤍'}</button>
+
+      <button className={css.trial} type='button' onClick={()=> setIsBookingOpen(true)}>book a trial session</button>
+      <button className={css.heart} type='button' onClick={handleFavoriteClick}>{isFavorite ? '❤️' : '🤍'}</button>
       
       </div>
       

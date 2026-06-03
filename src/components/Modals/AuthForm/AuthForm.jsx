@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import css from './AuthForm.module.css';
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -56,17 +57,19 @@ const AuthForm = ({onClose}) => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Log in</h2>
         <p>Welcome back! Please enter your credentials to access your account and continue your search for an teacher.</p>
+        <div className={css.credList}>
         <label>
-          <input name='email'{...register('email')} placeholder='email'/>
+          <input  className={css.label} name='email'{...register('email')} placeholder='email'/>
           {errors.email && <p>{errors.email.message}</p>}
         </label>
         <label>
-          <input
+          <input  className={css.label}
             name='password' {...register('password')} placeholder='password'
           />
           {errors.password && <p>{errors.password.message}</p>}
         </label>
-        <button type='submit'>Log in</button>
+        </div>
+        <button className={css.button} type='submit'>Log in</button>
       </form>
     </div>
   )

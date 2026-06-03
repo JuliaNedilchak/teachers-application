@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React from 'react'
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import css from './RegisterForm.module.css';
 import {auth} from '../../../firebase';
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup';
@@ -58,21 +59,23 @@ const RegisterForm = ({onClose}) => {
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <h2>Registration</h2>
         <p>Thank you for your interest in our platform! In order to register, we need some information. Please provide us with the following information</p>
+        <div className={css.formInputs}>
         <label>
-          <input name='name'{...register('name')} placeholder='name'/>
+          <input className={css.input} name='name'{...register('name')} placeholder='name'/>
           {errors.name && <p>{errors.name.message}</p>}
         </label>
         <label>
-          <input name='email'{...register('email')} placeholder='email'/>
+          <input className={css.input} name='email'{...register('email')} placeholder='email'/>
           {errors.email && <p>{errors.email.message}</p>}
         </label>
         <label>
-          <input
+          <input className={css.input}
             name='password' {...register('password')} placeholder='password'
           />
           {errors.password && <p>{errors.password.message}</p>}
         </label>
-        <button type='submit'>Registration</button>
+        </div>
+        <button className={css.button} type='submit'>Registration</button>
       </form>
     </div>
   )
